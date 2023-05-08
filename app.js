@@ -41,13 +41,9 @@ app.get("/posts/:postName", (req, res) => {
     const savedTitle = _.lowerCase(post.title);
 
     if (savedTitle === requestedTitle) {
-      console.log("Match Found!");
-    } else {
-      console.log("Match not found!");
+      res.render("post", { postTitle: post.title, postContent: post.content });
     }
   });
-
-  res.redirect("/");
 });
 
 app.post("/compose", (req, res) => {
