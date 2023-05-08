@@ -30,7 +30,10 @@
 
         <% posts.forEach(post => { %>
         <h1><%= post.title %></h1>
-        <p><%= post.content %></p>
+        <p class="post-content">
+          <%= post.content.substring(0, 100) %>
+          <a href="/posts/<%= post.title %>"> Read more... </a>
+        </p>
         <% }); %>
       </div>
       <div class="footer-padding"></div>
